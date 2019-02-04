@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand">{{title}}</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/employee-list']">employee-list</a>
+      </li>
+    </ul>
+</nav>
+<div class='row'>
+  <div class='col-md-6'>
+    <button class='btn btn-primary' [routerLink]="['/employee-form']">
+      Add Employee
+    </button>
+  </div>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
