@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { RouterModule } from '@angular/router';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    EmployeeEditComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { FormsModule } from '@angular/forms'
     FormsModule,
     RouterModule.forRoot([
       {path:'employee-list', component:EmployeeListComponent},
-      {path:'employee-form',component:EmployeeFormComponent}
+      {path:'employee-form',component:EmployeeFormComponent},
+      {path:'employee-edit/:id',component:EmployeeEditComponent}
 
       ])
   ],

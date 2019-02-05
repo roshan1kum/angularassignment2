@@ -29,7 +29,7 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeList=this.employeeservice.getEmployee();
   
   }
-  model=new Employee(5,"");
+  model=new Employee(null,"");
 
   get_checked_values(option: { IsEnabled: boolean; LanguageName: string; },event:any)
   {
@@ -42,11 +42,12 @@ export class EmployeeFormComponent implements OnInit {
   display_in_console(model:string){
     if(this.employeeservice.getEmployee().length>0){
     this.model.id=this.employeeservice.getEmployee()[this.employeeList.length-1].id+1;
-    alert(this.model.id);
+    //alert(this.model.id);
     this.add_Row();
     }
     else{
-      alert("0");
+      this.model.id=1;
+      this.add_Row();
     }
     // console.log(model);
     // console.log("firstname:"+this.model.firstname);
@@ -54,10 +55,12 @@ export class EmployeeFormComponent implements OnInit {
     // this.add_Row();
     // this.router.navigate(['/employee-list']);
   }
-   add_Row(){
+   add_Row()
+   {
      
-    this.employeeservice.getEmployee().push({id:this.model.id,firstname:this.model.firstname});
-    alert("In add_row method");
+    //this.employeeservice.getEmployee().push({id:this.model.id,firstname:this.model.firstname});
+    this.employeeservice.add_employee(this.model.id,this.model.firstname);
+    //alert("In add_row method");
     this.router.navigate(['/employee-list']);
    }
 }

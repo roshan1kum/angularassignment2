@@ -34,15 +34,13 @@ export class EmployeeListComponent implements OnInit {
   }
 
   delete(index: number){
-     //var v=prompt("do you really want to delete");
-     if(confirm("Press a button!"))
+     //var v=prompt();
+     if(confirm("do you really want to delete"))
      {
         this.employeeList.splice(index,1);
 
      }
-     else{
-       
-     }
+    
 
   }
 

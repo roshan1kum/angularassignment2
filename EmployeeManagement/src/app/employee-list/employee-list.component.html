@@ -10,8 +10,8 @@
     <tbody>
       <tr *ngFor="let employee of employeeList;let i=index;">
         <td>{{employee.firstname}}</td>
-        <td><button type="button" class="btn btn-success" >edit</button></td>
-        <td><button type="button" class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+        <td><button type="submit" class="btn btn-success" [routerLink]="['/employee-edit',employeeList.in]">edit</button></td>
+        <td><button type="submit" class="btn btn-danger" (click)="delete(i)">Delete</button></td>
       </tr>
     </tbody>
   </table>
